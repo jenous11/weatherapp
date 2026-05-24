@@ -17,11 +17,11 @@ let data1
 let data2
 let country
 
-let weatherdata1 
+let weatherdata1
 let weatherdata2
 
 let temperature
-let description
+let description     
 
 // hiding at first
 one.style.display="none"
@@ -42,13 +42,13 @@ const url3=`https://api.openweathermap.org/data/2.5/weather?q=${input.value}&app
 
 
 weatherdata1 = await fetch(url3);
-weatherdata2 = await weatherdata1.json();  
+weatherdata2 = await weatherdata1.json();
 console.log(weatherdata2);
 console.log(weatherdata2.clouds[0]);
 
 
 
-const iconCode = weatherdata2.weather[0].icon; 
+const iconCode = weatherdata2.weather[0].icon;
 const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
 document.getElementById("weather-icon").src = iconUrl;
 
@@ -60,7 +60,7 @@ console.log(weatherdata2);
 temperature=Math.round((temperature-273).toFixed(2) )
 description = weatherdata2.weather[0].description;
 
-// showing the data 
+// showing the data
 one.style.display="flex"
 two.style.display="none"
 document.querySelector('.hidden').style.visibility='visible';
